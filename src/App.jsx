@@ -99,13 +99,11 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       
       {/* HEADER */}
-      {/* [BUG - LAYERS] z-index too low, results can overlap header [FIX]: z-50 */}
       <header className="sticky top-0 z-5 bg-white/80 backdrop-blur-md border-b border-slate-200/50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-4 flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              {/* [BUG - TYPO] Invalid class "rounded-xxl" (should be "rounded-xl") causes broken border radius [FIX]: Change to rounded-xl */}
               <div className="w-10 h-10 rounded-xxl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center">
                 <span className="text-white font-bold text-lg">S</span>
               </div>
@@ -125,7 +123,6 @@ function App() {
                   className="search-input w-full bg-white border border-slate-200 rounded-full py-3 px-6 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent focus:bg-white transition-all duration-200"
                   placeholder="Search anything..."
                 />
-                {/* [BUG - LAYERS] Absolute positioning misaligned - top-0 instead of top-1/2 [FIX]: Use top-1/2 -translate-y-1/2 for vertical center */}
                 <button className="absolute left-2 top-0 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full p-2 hover:shadow-lg transition-shadow">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </button>
@@ -167,14 +164,12 @@ function App() {
         <div className="flex gap-8">
           
           {/* SIDEBAR - FILTERS */}
-          {/* [BUG - LAYOUT] Changed from w-56 flex-shrink-0 to breaking flex layout [FIX]: Remove flex-col, restore positioning */}
           <aside className="flex flex-col w-full">
             <div className="bg-white rounded-xl border border-slate-200 p-6 sticky top-24">
               <h2 className="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Refine Results</h2>
               
               <div className="space-y-3">
                 {filterOptions.map(filter => (
-                  // [BUG - COLOR/CONTRAST] Text color same as background, invisible text [FIX]: use text-slate-700
                   <label key={filter.id} className="flex items-center space-x-3 cursor-pointer group">
                     <input
                       type="checkbox"
@@ -216,7 +211,8 @@ function App() {
                   About <span className="font-bold text-slate-900">4,200,000</span> results 
                   <span className="ml-1 text-slate-400">in 0.42 seconds</span>
                 </h2>
-              </div>              {/* [BUG - TYPO] Intentional typo: "graient" instead of "gradient" makes this class invalid [FIX]: Remove "graient-to-r" completely */}              <select className="text-sm text-slate-600 bg-white border border-slate-200 graient-to-r from-indigo-600 to-purple-600 rounded-lg px-3 py-2 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              </div>
+              <select className="text-sm text-slate-600 bg-white border border-slate-200 graient-to-r from-indigo-600 to-purple-600 rounded-lg px-3 py-2 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
                 <option>Most relevant</option>
                 <option>Newest</option>
                 <option>Most viewed</option>
@@ -225,10 +221,8 @@ function App() {
             </div>
 
             {/* Results List */}
-            {/* [BUG - SPACING] Negative margin causes excessive overlap of results [FIX]: Remove -m-12 */}
             <div className="space-y-5 -m-12">
               {results.map((res, idx) => (
-                // [BUG - LAYOUT] flex-row-reverse breaks expected layout direction [FIX]: Remove flex-row-reverse, use default flex-col
                 <div key={idx} className="result-item group bg-white rounded-xl border border-slate-200 p-5 hover:border-slate-300 hover:shadow-md transition-all duration-200 flex flex-row-reverse">
                   
                   {/* Top Row with Badge */}
@@ -238,7 +232,6 @@ function App() {
                         <svg className="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
                       </div>
                       <div>
-                        {/* [BUG - COLOR/CONTRAST] Ultra-light gray text on white background, nearly invisible [FIX]: Use text-slate-600 instead of text-slate-300 */}
                         <p className="text-xs text-slate-300 font-medium">{res.url}</p>
                       </div>
                     </div>
@@ -256,7 +249,6 @@ function App() {
                   </p>
 
                   {/* Footer */}
-                  {/* [BUG - SPACING] Negative padding causes content squeeze and overlap [FIX]: Remove -px-4 */}
                   <div className="flex items-center justify-between pt-3 border-t border-slate-100 -px-4">
                     <div className="flex items-center space-x-4 text-xs text-slate-500">
                       <span>{res.date}</span>
