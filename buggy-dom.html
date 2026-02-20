@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="en"><head>
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SearchPro - Intelligent Search &amp; Discovery Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+      
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      
+      h1, h2, h3 {
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      .gradient-text {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .search-input {
+        transition: all 0.3s ease;
+      }
+      
+      .search-input:focus {
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+      
+      .result-item {
+        transition: all 0.2s ease;
+      }
+      
+      .result-item:hover {
+        transform: translateX(4px);
+      }
+      
+      .badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 1rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      
+      .badge-blue {
+        background-color: rgba(59, 130, 246, 0.1);
+        color: #2563eb;
+      }
+      
+      .badge-green {
+        background-color: rgba(34, 197, 94, 0.1);
+        color: #16a34a;
+      }
+      
+      .badge-purple {
+        background-color: rgba(168, 85, 247, 0.1);
+        color: #9333ea;
+      }
+      
+      .badge-orange {
+        background-color: rgba(249, 115, 22, 0.1);
+        color: #ea580c;
+      }
+    </style>
+  <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.left-2{left:0.5rem}.top-0{top:0px}.top-24{top:6rem}.-m-12{margin:-3rem}.-mx-4{margin-left:-1rem;margin-right:-1rem}.mx-1{margin-left:0.25rem;margin-right:0.25rem}.mx-8{margin-left:2rem;margin-right:2rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-1{margin-left:0.25rem}.mt-12{margin-top:3rem}.mt-16{margin-top:4rem}.mt-6{margin-top:1.5rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.h-10{height:2.5rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-9{height:2.25rem}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-8{width:2rem}.w-9{width:2.25rem}.w-full{width:100%}.min-w-0{min-width:0px}.max-w-2xl{max-width:42rem}.max-w-7xl{max-width:80rem}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.cursor-pointer{cursor:pointer}.flex-row-reverse{flex-direction:row-reverse}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-8{gap:2rem}.space-x-1 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.25rem * var(--tw-space-x-reverse));margin-left:calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-t{border-top-width:1px}.border-indigo-600{--tw-border-opacity:1;border-color:rgb(79 70 229 / var(--tw-border-opacity, 1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-200\/50{border-color:rgb(226 232 240 / 0.5)}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.border-transparent{border-color:transparent}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/80{background-color:rgb(255 255 255 / 0.8)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-slate-50{--tw-gradient-from:#f8fafc var(--tw-gradient-from-position);--tw-gradient-to:rgb(248 250 252 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-indigo-500{--tw-gradient-from:#6366f1 var(--tw-gradient-from-position);--tw-gradient-to:rgb(99 102 241 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-indigo-600{--tw-gradient-from:#4f46e5 var(--tw-gradient-from-position);--tw-gradient-to:rgb(79 70 229 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-slate-100{--tw-gradient-from:#f1f5f9 var(--tw-gradient-from-position);--tw-gradient-to:rgb(241 245 249 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-slate-100{--tw-gradient-to:#f1f5f9 var(--tw-gradient-to-position)}.to-purple-600{--tw-gradient-to:#9333ea var(--tw-gradient-to-position)}.to-slate-200{--tw-gradient-to:#e2e8f0 var(--tw-gradient-to-position)}.p-1\.5{padding:0.375rem}.p-2{padding:0.5rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pt-3{padding-top:0.75rem}.pt-6{padding-top:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.tracking-wide{letter-spacing:0.025em}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.text-indigo-700{--tw-text-opacity:1;color:rgb(67 56 202 / var(--tw-text-opacity, 1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.placeholder-slate-400::placeholder{--tw-placeholder-opacity:1;color:rgb(148 163 184 / var(--tw-placeholder-opacity, 1))}.opacity-0{opacity:0}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.blur{--tw-blur:blur(8px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-shadow{transition-property:box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.duration-300{transition-duration:300ms}.hover\:border-indigo-300:hover{--tw-border-opacity:1;border-color:rgb(165 180 252 / var(--tw-border-opacity, 1))}.hover\:border-slate-300:hover{--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.hover\:bg-indigo-50:hover{--tw-bg-opacity:1;background-color:rgb(238 242 255 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-100:hover{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.hover\:bg-white:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.hover\:text-indigo-600:hover{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.hover\:text-indigo-900:hover{--tw-text-opacity:1;color:rgb(49 46 129 / var(--tw-text-opacity, 1))}.hover\:text-slate-900:hover{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-md:hover{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:border-transparent:focus{border-color:transparent}.focus\:bg-white:focus{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-indigo-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(99 102 241 / var(--tw-ring-opacity, 1))}.group:hover .group-hover\:text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.group:hover .group-hover\:opacity-5{opacity:0.05}@media (min-width: 640px){.sm\:-mx-6{margin-left:-1.5rem;margin-right:-1.5rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}}@media (min-width: 1024px){.lg\:-mx-8{margin-left:-2rem;margin-right:-2rem}.lg\:px-8{padding-left:2rem;padding-right:2rem}}</style><style type="text/css" data-vite-dev-id="C:/Users/Jethers/OneDrive - CPC/Desktop/Thesis/Synthetic Dataset/Search Results Page/src/index.css">/* Global Styles */
+:root {
+  --color-primary: #667eea;
+  --color-primary-dark: #764ba2;
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-400: #94a3b8;
+  --color-slate-600: #475569;
+  --color-slate-900: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(to bottom right, var(--color-slate-50), var(--color-slate-100));
+  color: var(--color-slate-900);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-slate-300);
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-slate-400);
+}
+
+/* Input Focus States */
+input:focus {
+  outline: none;
+}
+
+/* Button Base Styles */
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Link Styles */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Selection */
+::selection {
+  background: rgba(102, 126, 234, 0.2);
+  color: var(--color-slate-900);
+}
+
+::-moz-selection {
+  background: rgba(102, 126, 234, 0.2);
+  color: var(--color-slate-900);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slideInFromLeft {
+  animation: slideInFromLeft 0.5s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Utility Classes */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Backdrop Blur Support */
+@supports (backdrop-filter: blur(1px)) {
+  .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+  }
+}
+
+/* Hover States */
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass Morphism */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Focus Visible Ring */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+  }
+  
+  button, input[type="button"] {
+    display: none;
+  }
+}
+
+/* Dark Mode Support (if needed in future) */
+@media (prefers-color-scheme: dark) {
+  /* Can add dark mode styles here */
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}</style></head>
+  <body class="bg-gradient-to-br from-slate-50 to-slate-100">
+    <div id="root"><div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100"><header class="sticky top-0 z-5 bg-white/80 backdrop-blur-md border-b border-slate-200/50 shadow-sm"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="py-4 flex items-center justify-between"><div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-xxl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center"><span class="text-white font-bold text-lg">S</span></div><div><h1 class="text-xl font-bold text-slate-900">SearchPro</h1><p class="text-xs text-slate-500">Intelligent Discovery</p></div></div><div class="flex-1 max-w-2xl mx-8"><div class="relative group"><div class="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full opacity-0 group-hover:opacity-5 transition-opacity duration-300 blur"></div><input type="text" class="search-input w-full bg-white border border-slate-200 rounded-full py-3 px-6 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent focus:bg-white transition-all duration-200" placeholder="Search anything..." value="multimodal AI &amp; UI generation" style=""><button class="absolute left-2 top-0 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full p-2 hover:shadow-lg transition-shadow"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button></div></div><div class="flex items-center space-x-4"><button class="p-2 hover:bg-slate-100 rounded-lg transition-colors"><svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.5 1.5H3.75A2.25 2.25 0 001.5 3.75v16.5A2.25 2.25 0 003.75 22.5h16.5a2.25 2.25 0 002.25-2.25V13.5"></path></svg></button><div class="w-9 h-9 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold text-sm hover:shadow-lg transition-shadow cursor-pointer">J</div></div></div><div class="flex items-center space-x-1 border-t border-slate-200/50 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8"><button class="py-3 px-4 text-sm font-medium transition-all duration-200 border-b-2 border-indigo-600 text-indigo-600">All</button><button class="py-3 px-4 text-sm font-medium transition-all duration-200 border-b-2 border-transparent text-slate-600 hover:text-slate-900">Images</button><button class="py-3 px-4 text-sm font-medium transition-all duration-200 border-b-2 border-transparent text-slate-600 hover:text-slate-900">News</button><button class="py-3 px-4 text-sm font-medium transition-all duration-200 border-b-2 border-transparent text-slate-600 hover:text-slate-900">Videos</button><button class="py-3 px-4 text-sm font-medium transition-all duration-200 border-b-2 border-transparent text-slate-600 hover:text-slate-900">Maps</button><button class="py-3 px-4 text-sm font-medium transition-all duration-200 border-b-2 border-transparent text-slate-600 hover:text-slate-900">Shopping</button></div></div></header><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6"><div class="flex gap-8"><aside class="flex flex-col w-full"><div class="bg-white rounded-xl border border-slate-200 p-6 sticky top-24"><h2 class="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Refine Results</h2><div class="space-y-3"><label class="flex items-center space-x-3 cursor-pointer group"><input type="checkbox" class="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" style=""><div class="flex-1"><p class="text-sm font-medium text-slate-100 group-hover:text-indigo-600 transition-colors">Last 24 hours</p><p class="text-xs text-slate-400">234</p></div></label><label class="flex items-center space-x-3 cursor-pointer group"><input type="checkbox" class="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" style=""><div class="flex-1"><p class="text-sm font-medium text-slate-100 group-hover:text-indigo-600 transition-colors">Last week</p><p class="text-xs text-slate-400">1,892</p></div></label><label class="flex items-center space-x-3 cursor-pointer group"><input type="checkbox" class="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" style=""><div class="flex-1"><p class="text-sm font-medium text-slate-100 group-hover:text-indigo-600 transition-colors">Last month</p><p class="text-xs text-slate-400">8,374</p></div></label><label class="flex items-center space-x-3 cursor-pointer group"><input type="checkbox" class="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" style=""><div class="flex-1"><p class="text-sm font-medium text-slate-100 group-hover:text-indigo-600 transition-colors">Verified sources</p><p class="text-xs text-slate-400">456</p></div></label><label class="flex items-center space-x-3 cursor-pointer group"><input type="checkbox" class="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" style=""><div class="flex-1"><p class="text-sm font-medium text-slate-100 group-hover:text-indigo-600 transition-colors">Trending now</p><p class="text-xs text-slate-400">892</p></div></label></div><div class="border-t border-slate-200 mt-6 pt-6"><h3 class="text-sm font-bold text-slate-900 mb-3 uppercase tracking-wide">Content Types</h3><div class="space-y-2"><button class="block w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-colors">Articles</button><button class="block w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-colors">Videos</button><button class="block w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-colors">Research</button><button class="block w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-colors">Tutorials</button></div></div><button class="w-full mt-6 py-2 text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors border border-slate-200 rounded-lg hover:border-indigo-300">Clear Filters</button></div></aside><main class="flex-1 min-w-0"><div class="mb-6 flex items-center justify-between"><div><h2 class="text-sm text-slate-600">About <span class="font-bold text-slate-900">4,200,000</span> results<span class="ml-1 text-slate-400">in 0.42 seconds</span></h2></div><select class="text-sm text-slate-600 bg-white border border-slate-200 graient-to-r from-indigo-600 to-purple-600 rounded-lg px-3 py-2 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"><option>Most relevant</option><option>Newest</option><option>Most viewed</option><option>Highest rated</option></select></div><div class="space-y-5 -m-12"><div class="result-item group bg-white rounded-xl border border-slate-200 p-5 hover:border-slate-300 hover:shadow-md transition-all duration-200 flex flex-row-reverse"><div class="flex items-start justify-between mb-2"><div class="flex items-center space-x-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg></div><div><p class="text-xs text-slate-300 font-medium">arxiv.org › papers › vision-transformers-multimodal</p></div></div><span class="badge badge-blue">Research Paper</span></div><h3 class="text-lg font-semibold text-indigo-700 hover:text-indigo-900 cursor-pointer mb-2 group-hover:underline transition-colors">Multimodal Learning with Vision Transformers: Next-Generation AI Models</h3><p class="text-slate-600 leading-relaxed text-sm mb-4">An in-depth analysis of how Vision Transformers can be adapted for complex multimodal tasks including text-to-image synthesis, cross-modal retrieval, and intelligent UI code generation. Recent advances show significant improvements.</p><div class="flex items-center justify-between pt-3 border-t border-slate-100 -px-4"><div class="flex items-center space-x-4 text-xs text-slate-500"><span>2 days ago</span><span>•</span><div class="flex items-center space-x-1"><span>⭐ 4.8</span></div></div><div class="flex items-center space-x-2"><button class="p-1.5 hover:bg-slate-100 rounded-lg transition-colors" title="Save"><svg class="w-4 h-4 text-slate-400 hover:text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h6a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V5z"></path></svg></button><button class="p-1.5 hover:bg-slate-100 rounded-lg transition-colors" title="Share"><svg class="w-4 h-4 text-slate-400 hover:text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C9.589 12.438 10 11.331 10 10c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3c.742 0 1.439-.184 2.049-.513M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></button></div></div></div><div class="result-item group bg-white rounded-xl border border-slate-200 p-5 hover:border-slate-300 hover:shadow-md transition-all duration-200 flex flex-row-reverse"><div class="flex items-start justify-between mb-2"><div class="flex items-center space-x-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg></div><div><p class="text-xs text-slate-300 font-medium">react.dev › learn › installation</p></div></div><span class="badge badge-green">Documentation</span></div><h3 class="text-lg font-semibold text-indigo-700 hover:text-indigo-900 cursor-pointer mb-2 group-hover:underline transition-colors">React 19 Documentation - Official Getting Started Guide</h3><p class="text-slate-600 leading-relaxed text-sm mb-4">Learn how to create a new React application using modern frameworks like Next.js, Remix, or Vite. Understanding the component lifecycle and hooks is essential for building scalable applications.</p><div class="flex items-center justify-between pt-3 border-t border-slate-100 -px-4"><div class="flex items-center space-x-4 text-xs text-slate-500"><span>Updated today</span><span>•</span><div class="flex items-center space-x-1"><span>⭐ 4.9</span></div></div><div class="flex items-center space-x-2"><button class="p-1.5 hover:bg-slate-100 rounded-lg transition-colors" title="Save"><svg class="w-4 h-4 text-slate-400 hover:text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h6a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V5z"></path></svg></button><button class="p-1.5 hover:bg-slate-100 rounded-lg transition-colors" title="Share"><svg class="w-4 h-4 text-slate-400 hover:text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C9.589 12.438 10 11.331 10 10c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3c.742 0 1.439-.184 2.049-.513M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></button></div></div></div><div class="result-item group bg-white rounded-xl border border-slate-200 p-5 hover:border-slate-300 hover:shadow-md transition-all duration-200 flex flex-row-reverse"><div class="flex items-start justify-between mb-2"><div class="flex items-center space-x-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg></div><div><p class="text-xs text-slate-300 font-medium">tailwindcss.com › docs › utility-first</p></div></div><span class="badge badge-purple">Framework</span></div><h3 class="text-lg font-semibold text-indigo-700 hover:text-indigo-900 cursor-pointer mb-2 group-hover:underline transition-colors">Tailwind CSS - Utility-First CSS Framework Fundamentals</h3><p class="text-slate-600 leading-relaxed text-sm mb-4">Building complex user interfaces without leaving your HTML markup. A powerful utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90. Perfect for rapid development.</p><div class="flex items-center justify-between pt-3 border-t border-slate-100 -px-4"><div class="flex items-center space-x-4 text-xs text-slate-500"><span>1 week ago</span><span>•</span><div class="flex items-center space-x-1"><span>⭐ 4.7</span></div></div><div class="flex items-center space-x-2"><button class="p-1.5 hover:bg-slate-100 rounded-lg transition-colors" title="Save"><svg class="w-4 h-4 text-slate-400 hover:text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h6a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V5z"></path></svg></button><button class="p-1.5 hover:bg-slate-100 rounded-lg transition-colors" title="Share"><svg class="w-4 h-4 text-slate-400 hover:text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C9.589 12.438 10 11.331 10 10c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3c.742 0 1.439-.184 2.049-.513M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></button></div></div></div><div class="result-item group bg-white rounded-xl border border-slate-200 p-5 hover:border-slate-300 hover:shadow-md transition-all duration-200 flex flex-row-reverse"><div class="flex items-start justify-between mb-2"><div class="flex items-center space-x-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg></div><div><p class="text-xs text-slate-300 font-medium">github.com › microsoft › CodeBERT</p></div></div><span class="badge badge-orange">AI Model</span></div><h3 class="text-lg font-semibold text-indigo-700 hover:text-indigo-900 cursor-pointer mb-2 group-hover:underline transition-colors">CodeBERT: Pre-Trained Model for Programming Language Understanding</h3><p class="text-slate-600 leading-relaxed text-sm mb-4">CodeBERT is a bimodal pre-trained model that captures semantic connections between programming language code and natural language comments. Essential for code understanding and generation tasks.</p><div class="flex items-center justify-between pt-3 border-t border-slate-100 -px-4"><div class="flex items-center space-x-4 text-xs text-slate-500"><span>3 weeks ago</span><span>•</span><div class="flex items-center space-x-1"><span>⭐ 4.6</span></div></div><div class="flex items-center space-x-2"><button class="p-1.5 hover:bg-slate-100 rounded-lg transition-colors" title="Save"><svg class="w-4 h-4 text-slate-400 hover:text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h6a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V5z"></path></svg></button><button class="p-1.5 hover:bg-slate-100 rounded-lg transition-colors" title="Share"><svg class="w-4 h-4 text-slate-400 hover:text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C9.589 12.438 10 11.331 10 10c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3c.742 0 1.439-.184 2.049-.513M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></button></div></div></div><div class="result-item group bg-white rounded-xl border border-slate-200 p-5 hover:border-slate-300 hover:shadow-md transition-all duration-200 flex flex-row-reverse"><div class="flex items-start justify-between mb-2"><div class="flex items-center space-x-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg></div><div><p class="text-xs text-slate-300 font-medium">medium.com › deep-learning › computer-vision</p></div></div><span class="badge badge-blue">Tutorial</span></div><h3 class="text-lg font-semibold text-indigo-700 hover:text-indigo-900 cursor-pointer mb-2 group-hover:underline transition-colors">Deep Learning for Computer Vision: Comprehensive Tutorial Series</h3><p class="text-slate-600 leading-relaxed text-sm mb-4">A complete guide covering CNN architectures, object detection, semantic segmentation, and image classification. Includes hands-on code examples and best practices for production systems.</p><div class="flex items-center justify-between pt-3 border-t border-slate-100 -px-4"><div class="flex items-center space-x-4 text-xs text-slate-500"><span>5 days ago</span><span>•</span><div class="flex items-center space-x-1"><span>⭐ 4.5</span></div></div><div class="flex items-center space-x-2"><button class="p-1.5 hover:bg-slate-100 rounded-lg transition-colors" title="Save"><svg class="w-4 h-4 text-slate-400 hover:text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h6a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V5z"></path></svg></button><button class="p-1.5 hover:bg-slate-100 rounded-lg transition-colors" title="Share"><svg class="w-4 h-4 text-slate-400 hover:text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C9.589 12.438 10 11.331 10 10c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3c.742 0 1.439-.184 2.049-.513M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></button></div></div></div><div class="result-item group bg-white rounded-xl border border-slate-200 p-5 hover:border-slate-300 hover:shadow-md transition-all duration-200 flex flex-row-reverse"><div class="flex items-start justify-between mb-2"><div class="flex items-center space-x-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg></div><div><p class="text-xs text-slate-300 font-medium">graphql.org › learn › best-practices</p></div></div><span class="badge badge-green">Guide</span></div><h3 class="text-lg font-semibold text-indigo-700 hover:text-indigo-900 cursor-pointer mb-2 group-hover:underline transition-colors">GraphQL Best Practices: Building Scalable APIs in 2025</h3><p class="text-slate-600 leading-relaxed text-sm mb-4">Master the fundamentals of GraphQL and learn how to design efficient queries and mutations. Discover optimization techniques for handling complex data relationships and real-time subscriptions.</p><div class="flex items-center justify-between pt-3 border-t border-slate-100 -px-4"><div class="flex items-center space-x-4 text-xs text-slate-500"><span>4 days ago</span><span>•</span><div class="flex items-center space-x-1"><span>⭐ 4.8</span></div></div><div class="flex items-center space-x-2"><button class="p-1.5 hover:bg-slate-100 rounded-lg transition-colors" title="Save"><svg class="w-4 h-4 text-slate-400 hover:text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h6a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V5z"></path></svg></button><button class="p-1.5 hover:bg-slate-100 rounded-lg transition-colors" title="Share"><svg class="w-4 h-4 text-slate-400 hover:text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C9.589 12.438 10 11.331 10 10c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3c.742 0 1.439-.184 2.049-.513M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></button></div></div></div><div class="result-item group bg-white rounded-xl border border-slate-200 p-5 hover:border-slate-300 hover:shadow-md transition-all duration-200 flex flex-row-reverse"><div class="flex items-start justify-between mb-2"><div class="flex items-center space-x-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg></div><div><p class="text-xs text-slate-300 font-medium">tensorflow.org › guide › ml-pipelines</p></div></div><span class="badge badge-purple">Tutorial</span></div><h3 class="text-lg font-semibold text-indigo-700 hover:text-indigo-900 cursor-pointer mb-2 group-hover:underline transition-colors">Machine Learning Pipelines: From Data to Production Deployment</h3><p class="text-slate-600 leading-relaxed text-sm mb-4">Learn how to build, train, and deploy machine learning models at scale. Includes MLOps best practices, containerization, and monitoring strategies for production environments.</p><div class="flex items-center justify-between pt-3 border-t border-slate-100 -px-4"><div class="flex items-center space-x-4 text-xs text-slate-500"><span>1 week ago</span><span>•</span><div class="flex items-center space-x-1"><span>⭐ 4.7</span></div></div><div class="flex items-center space-x-2"><button class="p-1.5 hover:bg-slate-100 rounded-lg transition-colors" title="Save"><svg class="w-4 h-4 text-slate-400 hover:text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h6a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V5z"></path></svg></button><button class="p-1.5 hover:bg-slate-100 rounded-lg transition-colors" title="Share"><svg class="w-4 h-4 text-slate-400 hover:text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C9.589 12.438 10 11.331 10 10c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3c.742 0 1.439-.184 2.049-.513M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></button></div></div></div><div class="result-item group bg-white rounded-xl border border-slate-200 p-5 hover:border-slate-300 hover:shadow-md transition-all duration-200 flex flex-row-reverse"><div class="flex items-start justify-between mb-2"><div class="flex items-center space-x-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg></div><div><p class="text-xs text-slate-300 font-medium">web.dev › performance › optimization</p></div></div><span class="badge badge-orange">Performance</span></div><h3 class="text-lg font-semibold text-indigo-700 hover:text-indigo-900 cursor-pointer mb-2 group-hover:underline transition-colors">Web Performance Optimization: Advanced Techniques for 2025</h3><p class="text-slate-600 leading-relaxed text-sm mb-4">Comprehensive guide on improving Core Web Vitals, reducing load times, and optimizing assets. Learn about lazy loading, code splitting, caching strategies, and performance monitoring.</p><div class="flex items-center justify-between pt-3 border-t border-slate-100 -px-4"><div class="flex items-center space-x-4 text-xs text-slate-500"><span>2 days ago</span><span>•</span><div class="flex items-center space-x-1"><span>⭐ 4.6</span></div></div><div class="flex items-center space-x-2"><button class="p-1.5 hover:bg-slate-100 rounded-lg transition-colors" title="Save"><svg class="w-4 h-4 text-slate-400 hover:text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h6a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V5z"></path></svg></button><button class="p-1.5 hover:bg-slate-100 rounded-lg transition-colors" title="Share"><svg class="w-4 h-4 text-slate-400 hover:text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C9.589 12.438 10 11.331 10 10c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3c.742 0 1.439-.184 2.049-.513M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></button></div></div></div></div><div class="mt-12 flex items-center justify-center space-x-2"><button class="p-2 hover:bg-white rounded-lg transition-colors"><svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button><button class="w-10 h-10 rounded-lg font-medium transition-all duration-200 bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md">1</button><button class="w-10 h-10 rounded-lg font-medium transition-all duration-200 bg-white text-indigo-600 border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50">2</button><button class="w-10 h-10 rounded-lg font-medium transition-all duration-200 bg-white text-indigo-600 border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50">3</button><button class="w-10 h-10 rounded-lg font-medium transition-all duration-200 bg-white text-indigo-600 border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50">4</button><button class="w-10 h-10 rounded-lg font-medium transition-all duration-200 bg-white text-indigo-600 border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50">5</button><span class="text-slate-400 mx-1">...</span><button class="w-10 h-10 rounded-lg font-medium bg-white text-slate-600 border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-all">10</button><button class="p-2 hover:bg-white rounded-lg transition-colors"><svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button></div><div class="mt-16 text-center"><p class="text-slate-500 text-sm mb-4">Didn't find what you're looking for?</p><button class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-full hover:shadow-lg transition-shadow"><span>Search Advanced</span><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg></button></div></main></div></div></div></div>
+    <script type="module" src="/src/main.jsx"></script>
+  
+</body></html>

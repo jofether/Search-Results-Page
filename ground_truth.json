@@ -1,0 +1,155 @@
+{
+  "repository": "Search Results Page",
+  "bugs": [
+    {
+      "bug_category": "Layers",
+      "bug_type": "z-index",
+      "file_modified": "src/App.jsx",
+      "line_number": 102,
+      "clean_code": "<header className=\"sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50 shadow-sm\">",
+      "buggy_code": "<header className=\"sticky top-0 z-5 bg-white/80 backdrop-blur-md border-b border-slate-200/50 shadow-sm\">",
+      "css_selector": "header",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Typo",
+      "bug_type": "border-radius",
+      "file_modified": "src/App.jsx",
+      "line_number": 107,
+      "clean_code": "<div className=\"w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center\">",
+      "buggy_code": "<div className=\"w-10 h-10 rounded-xxl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center\">",
+      "css_selector": ".rounded-xxl",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Layout",
+      "bug_type": "positioning",
+      "file_modified": "src/App.jsx",
+      "line_number": 126,
+      "clean_code": "<button className=\"absolute right-2 top-1/2 -translate-y-1/2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full p-2 hover:shadow-lg transition-shadow\">",
+      "buggy_code": "<button className=\"absolute left-2 top-0 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full p-2 hover:shadow-lg transition-shadow\">",
+      "css_selector": "button",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Layout",
+      "bug_type": "flexbox",
+      "file_modified": "src/App.jsx",
+      "line_number": 167,
+      "clean_code": "<aside className=\"w-56 flex-shrink-0\">",
+      "buggy_code": "<aside className=\"flex flex-col w-full\">",
+      "css_selector": "aside",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Color",
+      "bug_type": "color",
+      "file_modified": "src/App.jsx",
+      "line_number": 181,
+      "clean_code": "<p className=\"text-sm font-medium text-slate-700 group-hover:text-indigo-600 transition-colors\">{filter.label}</p>",
+      "buggy_code": "<p className=\"text-sm font-medium text-slate-100 group-hover:text-indigo-600 transition-colors\">{filter.label}</p>",
+      "css_selector": ".text-slate-100",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Typo",
+      "bug_type": "gradient",
+      "file_modified": "src/App.jsx",
+      "line_number": 215,
+      "clean_code": "<select className=\"text-sm text-slate-600 bg-white border border-slate-200 rounded-lg px-3 py-2 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500\">",
+      "buggy_code": "<select className=\"text-sm text-slate-600 bg-white border border-slate-200 graient-to-r from-indigo-600 to-purple-600 rounded-lg px-3 py-2 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500\">",
+      "css_selector": "select",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Spacing",
+      "bug_type": "margin",
+      "file_modified": "src/App.jsx",
+      "line_number": 224,
+      "clean_code": "<div className=\"space-y-5\">",
+      "buggy_code": "<div className=\"space-y-5 -m-12\">",
+      "css_selector": ".space-y-5",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Layout",
+      "bug_type": "flexbox",
+      "file_modified": "src/App.jsx",
+      "line_number": 225,
+      "clean_code": "<div key={idx} className=\"result-item group bg-white rounded-xl border border-slate-200 p-5 hover:border-slate-300 hover:shadow-md transition-all duration-200\">",
+      "buggy_code": "<div key={idx} className=\"result-item group bg-white rounded-xl border border-slate-200 p-5 hover:border-slate-300 hover:shadow-md transition-all duration-200 flex flex-row-reverse\">",
+      "css_selector": ".result-item",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Color",
+      "bug_type": "color",
+      "file_modified": "src/App.jsx",
+      "line_number": 235,
+      "clean_code": "<p className=\"text-xs text-slate-400 font-medium\">{res.url}</p>",
+      "buggy_code": "<p className=\"text-xs text-slate-300 font-medium\">{res.url}</p>",
+      "css_selector": ".text-slate-300",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "bug_category": "Spacing",
+      "bug_type": "padding",
+      "file_modified": "src/App.jsx",
+      "line_number": 252,
+      "clean_code": "<div className=\"flex items-center justify-between pt-3 border-t border-slate-100\">",
+      "buggy_code": "<div className=\"flex items-center justify-between pt-3 border-t border-slate-100 -px-4\">",
+      "css_selector": ".border-t",
+      "bounding_box": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    }
+  ]
+}
