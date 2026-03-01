@@ -2,6 +2,7 @@
   "repository": "Search Results Page",
   "bugs": [
     {
+      "comment": "Bug #1 - z-index",
       "bug_category": "Layers",
       "bug_type": "z-index",
       "file_modified": "src/App.jsx",
@@ -12,11 +13,12 @@
       "bounding_box": {
         "x": 0,
         "y": 0,
-        "width": 0,
-        "height": 0
+        "width": 1280,
+        "height": 127
       }
     },
     {
+      "comment": "Bug #2 - border-radius",
       "bug_category": "Typo",
       "bug_type": "border-radius",
       "file_modified": "src/App.jsx",
@@ -25,13 +27,14 @@
       "buggy_code": "<div className=\"w-10 h-10 rounded-xxl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center\">",
       "css_selector": ".rounded-xxl",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 32,
+        "y": 21,
+        "width": 40,
+        "height": 40
       }
     },
     {
+      "comment": "Bug #3 - positioning",
       "bug_category": "Layout",
       "bug_type": "positioning",
       "file_modified": "src/App.jsx",
@@ -40,13 +43,14 @@
       "buggy_code": "<button className=\"absolute left-2 top-0 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full p-2 hover:shadow-lg transition-shadow\">",
       "css_selector": "button",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 350,
+        "y": 16,
+        "width": 36,
+        "height": 36
       }
     },
     {
+      "comment": "Bug #4 - flexbox",
       "bug_category": "Layout",
       "bug_type": "flexbox",
       "file_modified": "src/App.jsx",
@@ -55,13 +59,14 @@
       "buggy_code": "<aside className=\"flex flex-col w-full\">",
       "css_selector": "aside",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 32,
+        "y": 151,
+        "width": 1184,
+        "height": 4128
       }
     },
     {
+      "comment": "Bug #5 - color",
       "bug_category": "Color",
       "bug_type": "color",
       "file_modified": "src/App.jsx",
@@ -70,13 +75,14 @@
       "buggy_code": "<p className=\"text-sm font-medium text-slate-100 group-hover:text-indigo-600 transition-colors\">{filter.label}</p>",
       "css_selector": ".text-slate-100",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 85,
+        "y": 212,
+        "width": 1106,
+        "height": 20
       }
     },
     {
+      "comment": "Bug #6 - gradient",
       "bug_category": "Typo",
       "bug_type": "gradient",
       "file_modified": "src/App.jsx",
@@ -85,13 +91,14 @@
       "buggy_code": "<select className=\"text-sm text-slate-600 bg-white border border-slate-200 graient-to-r from-indigo-600 to-purple-600 rounded-lg px-3 py-2 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500\">",
       "css_selector": "select",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 1319,
+        "y": 183,
+        "width": 136,
+        "height": 36
       }
     },
     {
+      "comment": "Bug #7 - margin",
       "bug_category": "Spacing",
       "bug_type": "margin",
       "file_modified": "src/App.jsx",
@@ -100,13 +107,14 @@
       "buggy_code": "<div className=\"space-y-5 -m-12\">",
       "css_selector": ".space-y-5",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 1200,
+        "y": 227,
+        "width": 96,
+        "height": 3740
       }
     },
     {
+      "comment": "Bug #8 - flexbox",
       "bug_category": "Layout",
       "bug_type": "flexbox",
       "file_modified": "src/App.jsx",
@@ -115,13 +123,14 @@
       "buggy_code": "<div key={idx} className=\"result-item group bg-white rounded-xl border border-slate-200 p-5 hover:border-slate-300 hover:shadow-md transition-all duration-200 flex flex-row-reverse\">",
       "css_selector": ".result-item",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 1200,
+        "y": 227,
+        "width": 96,
+        "height": 558
       }
     },
     {
+      "comment": "Bug #9 - color",
       "bug_category": "Color",
       "bug_type": "color",
       "file_modified": "src/App.jsx",
@@ -130,13 +139,14 @@
       "buggy_code": "<p className=\"text-xs text-slate-300 font-medium\">{res.url}</p>",
       "css_selector": ".text-slate-300",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 1102,
+        "y": 248,
+        "width": 80,
+        "height": 80
       }
     },
     {
+      "comment": "Bug #10 - padding",
       "bug_category": "Spacing",
       "bug_type": "padding",
       "file_modified": "src/App.jsx",
@@ -145,10 +155,10 @@
       "buggy_code": "<div className=\"flex items-center justify-between pt-3 border-t border-slate-100 -px-4\">",
       "css_selector": ".border-t",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 684,
+        "y": 248,
+        "width": 148,
+        "height": 517
       }
     }
   ]
