@@ -1,5 +1,9 @@
 {
   "repository": "Search Results Page",
+  "playwright_config": {
+    "viewport_height": 4500,
+    "note": "Must scroll down 300px before capturing Bug #1 to reveal z-index failure."
+  },
   "bugs": [
     {
       "comment": "Bug #1 - z-index",
@@ -14,7 +18,7 @@
         "x": 0,
         "y": 0,
         "width": 1280,
-        "height": 127
+        "height": 250
       }
     },
     {
@@ -25,7 +29,7 @@
       "line_number": 107,
       "clean_code": "<div className=\"w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center\">",
       "buggy_code": "<div className=\"w-10 h-10 rounded-xxl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center\">",
-      "css_selector": ".rounded-xxl",
+      "css_selector": "header .w-10.h-10.bg-gradient-to-br",
       "bounding_box": {
         "x": 32,
         "y": 21,
@@ -41,12 +45,12 @@
       "line_number": 126,
       "clean_code": "<button className=\"absolute right-2 top-1/2 -translate-y-1/2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full p-2 hover:shadow-lg transition-shadow\">",
       "buggy_code": "<button className=\"absolute left-2 top-0 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full p-2 hover:shadow-lg transition-shadow\">",
-      "css_selector": "button",
+      "css_selector": ".relative.group button.rounded-full.text-white.absolute",
       "bounding_box": {
-        "x": 350,
-        "y": 16,
-        "width": 36,
-        "height": 36
+        "x": 200,
+        "y": 10,
+        "width": 400,
+        "height": 50
       }
     },
     {
@@ -73,7 +77,7 @@
       "line_number": 181,
       "clean_code": "<p className=\"text-sm font-medium text-slate-700 group-hover:text-indigo-600 transition-colors\">{filter.label}</p>",
       "buggy_code": "<p className=\"text-sm font-medium text-slate-100 group-hover:text-indigo-600 transition-colors\">{filter.label}</p>",
-      "css_selector": ".text-slate-100",
+      "css_selector": "aside label.group:first-of-type p.text-sm.font-medium",
       "bounding_box": {
         "x": 85,
         "y": 212,
@@ -91,7 +95,7 @@
       "buggy_code": "<select className=\"text-sm text-slate-600 bg-white border border-slate-200 graient-to-r from-indigo-600 to-purple-600 rounded-lg px-3 py-2 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500\">",
       "css_selector": "select",
       "bounding_box": {
-        "x": 1319,
+        "x": 1100,
         "y": 183,
         "width": 136,
         "height": 36
@@ -105,11 +109,11 @@
       "line_number": 224,
       "clean_code": "<div className=\"space-y-5\">",
       "buggy_code": "<div className=\"space-y-5 -m-12\">",
-      "css_selector": ".space-y-5",
+      "css_selector": "main .space-y-5",
       "bounding_box": {
-        "x": 1200,
+        "x": 250,
         "y": 227,
-        "width": 96,
+        "width": 800,
         "height": 3740
       }
     },
@@ -121,11 +125,11 @@
       "line_number": 225,
       "clean_code": "<div key={idx} className=\"result-item group bg-white rounded-xl border border-slate-200 p-5 hover:border-slate-300 hover:shadow-md transition-all duration-200\">",
       "buggy_code": "<div key={idx} className=\"result-item group bg-white rounded-xl border border-slate-200 p-5 hover:border-slate-300 hover:shadow-md transition-all duration-200 flex flex-row-reverse\">",
-      "css_selector": ".result-item",
+      "css_selector": "main .result-item:first-of-type",
       "bounding_box": {
-        "x": 1200,
+        "x": 250,
         "y": 227,
-        "width": 96,
+        "width": 800,
         "height": 558
       }
     },
@@ -137,9 +141,9 @@
       "line_number": 235,
       "clean_code": "<p className=\"text-xs text-slate-400 font-medium\">{res.url}</p>",
       "buggy_code": "<p className=\"text-xs text-slate-300 font-medium\">{res.url}</p>",
-      "css_selector": ".text-slate-300",
+      "css_selector": "main .result-item:first-of-type p.text-xs.font-medium",
       "bounding_box": {
-        "x": 1102,
+        "x": 270,
         "y": 248,
         "width": 80,
         "height": 80
@@ -153,12 +157,12 @@
       "line_number": 252,
       "clean_code": "<div className=\"flex items-center justify-between pt-3 border-t border-slate-100\">",
       "buggy_code": "<div className=\"flex items-center justify-between pt-3 border-t border-slate-100 -px-4\">",
-      "css_selector": ".border-t",
+      "css_selector": "main .result-item:first-of-type .border-t.border-slate-100",
       "bounding_box": {
-        "x": 684,
-        "y": 248,
-        "width": 148,
-        "height": 517
+        "x": 250,
+        "y": 760,
+        "width": 800,
+        "height": 40
       }
     }
   ]
